@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:demo;MODE=MySQL;DB_CLOSE_DELAY=-1;TRACE_LEVEL_SYSTEM_OUT=0;
+    driver-class-name: org.h2.Driver
+    schema: classpath:/mysql/schema.sql
+    data: classpath:/mysql/data.sql

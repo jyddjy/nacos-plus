@@ -1,0 +1,62 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: integration-test
+    id: "9999"
+
+---
+spring:
+  profiles: prod
+
+service:
+  bfs_gateway:
+    # TODO: 需要改写为生产环境的BfsGateway的host，参考"https://confluence.newhope.com/pages/viewpage.action?pageId=80512271#bfs-gateway的域名"
+    host: http://inf-gateway.xxx.newhope.com
+  app_center:
+    secret: 641582e8bf03465790dff148f9ddc382
+  demo:
+    # TODO: 需要改写为生产环境的host
+    host: http://bfs-demo.xxx.newhope.com
+
+---
+spring:
+  profiles: test
+
+service:
+  bfs_gateway:
+    # TODO: 需要改写为测试环境的BfsGateway的host，参考"https://confluence.newhope.com/pages/viewpage.action?pageId=80512271#bfs-gateway的域名"
+    host: http://inf-gateway.xxx.newhope.com
+  app_center:
+    secret: 641582e8bf03465790dff148f9ddc382
+  demo:
+    # TODO: 需要改写为测试环境的host
+    host: http://bfs-demo.xxx.newhope.com
+
+---
+spring:
+  profiles: dev
+
+  # 对不同服务的配置，分散到该处
+service:
+  bfs_gateway:
+    # TODO: 需要改写为Dev环境的BfsGateway的host，参考"https://confluence.newhope.com/pages/viewpage.action?pageId=80512271#bfs-gateway的域名"
+    host: http://inf-gateway.xxx.newhope.com
+  app_center:
+    secret: 641582e8bf03465790dff148f9ddc382
+  demo:
+    # TODO: 需要改写为开发环境的host
+    host: http://bfs-demo.xxx.newhope.com
+
+---
+spring:
+  profiles: local
+  # 对不同服务的配置，分散到该处
+service:
+  bfs_gateway:
+    # TODO: 需要改写为Dev环境的BfsGateway的host，参考"https://confluence.newhope.com/pages/viewpage.action?pageId=80512271#bfs-gateway的域名"
+    host: http://inf-gateway.xxx.newhope.com
+  app_center:
+    secret: 641582e8bf03465790dff148f9ddc382
+  demo:
+    host: http://localhost:8080

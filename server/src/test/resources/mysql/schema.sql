@@ -1,0 +1,9 @@
+CREATE TABLE `demo` (
+  `id`            BIGINT        NOT NULL AUTO_INCREMENT,
+  `name`          VARCHAR(128)  NOT NULL COMMENT '名称',
+  `status`        VARCHAR(16)   NOT NULL DEFAULT 'ENABLED' COMMENT '状态: ENABLED',
+  `ext`           VARCHAR(2048) NOT NULL DEFAULT '{}' COMMENT '额外信息',
+  `create_time`   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  `update_time`   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+  PRIMARY KEY (`id`)
+) COMMENT ='demo';
